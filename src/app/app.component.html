@@ -1,0 +1,11 @@
+<main>
+  <app-header [totalItems]="totalItems"></app-header>
+
+  <app-detail [products]="products" (onRemoveProduct)="removeProduct($event)" (onInputQuantity)="updateProduct($event)"></app-detail>
+
+  <app-promotion [subTotal]="subTotal" *ngIf="products.length > 0"></app-promotion>
+  <div style="margin-top: 10%;height: 50px;display: flex; justify-content: center;">
+    <button mat-button *ngIf="products.length === 0" (click)="refreshShoppingCart()">Shopping now</button>
+  </div>
+
+</main>
